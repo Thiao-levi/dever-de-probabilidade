@@ -1,0 +1,132 @@
+biblioteca ( readxl )
+hiv  <- read_excel( " hiv.xls " )
+Ver ( hiv )
+
+resumo ( hiv )
+
+biblioteca ( cleanverse )
+biblioteca( gridExtra )
+
+range( hiv $ idade )
+
+
+biblioteca ( ggplot2 )
+
+x  <- c( 15 , 20 , 21 , 28 , 32 , 50 , 70 )
+quantil( x , probs = c( 0 , .25 , .5 , .75 , 1 ))
+
+diagrama de caixa( x )
+  
+
+biblioteca ( readxl )
+precipitacao  <- read_excel( " precipitacao.xls " )
+Ver( precipitacao )
+
+precipitação
+y  <-  precipitacao $ Chuva
+quantil( y , prob = c( 0 , 0,25 , 0,5 , 0,75 , 1 ))
+diff(range( precipitação $ Chuva ))
+boxplot ( y )
+
+par( bg  =  " azul claro " )
+histograma  <- hist( y , main = " Histograma das Chuvas " , xlab  =  " Chuva " , ylab = " Frequência " , col = " darkblue " , bg = " black " )
+
+#mediana e mídia
+# abline(v=c(median(y), mean(y)), col=c("red", "blue"),lwd=2)
+# legend(x="topright", c("Mediana", "Media"), col=c("red","blue"),lty=c(1,1), lwd=c(2,2) )
+
+abline( v = c(quantil( y , probs = c( .25 , .5 , .75 ))), col = c( " vermelho " , " azul " , " verde " ), lwd = 5 )
+abline( v = média( y ), col = c( " laranja " ), lwd = 2 , lty = 2 )
+legend( bg = " branco " , x = " topright " , c( " 1º Quartil " , " 2º Quartil " , " 3º Quartil " , " Média " , " Normal " ), col  = c( " vermelho " , " azul " , " verde " , " laranja " ," roxo "), lty = c( 1 , 1 , 1 , 2 , 1 ), lwd = c( 2 , 2 , 2 , 2 , 2 ))
+
+# colocando um normal no gráfico
+xfit <- seq(min( y ),max( y ))
+yfit <- dnorm( xfit , média = média ( y ), sd = sd( y ))
+yfit  <-  yfit * diff( histograma $ mids [ 1 : 2 ]) * comprimento( y )
+lines( xfit , yfit , col = " roxo " , lwd = 2 )
+
+
+var( y ) # variancia da chuva
+sd( y ) # desvio padrão
+
+sequencia  = seq ( -100 , 3000 )
+sequencial
+função  =  sequencia  ^  2  +  5 *  sequencia  +  7
+funcao
+
+plot( sequencia , funcao )
+
+mu = média( y )
+sigma = sd( y )
+
+j  = ( 1 / ( sigma * sqrt( 2 * pi ))) * exp( - ((( sequência - mu ) ^ 2 ) / ( 2 * sigma ^ 2 ))))
+
+plot( sequência , j )
+
+
+# prob = pnorm(b,média = mídia, sd = sqrt(var)) - pnorm(a,média = mídia, sd = sqrt(var))
+# a variância é o quadrado do desvio padrão
+
+# 1a
+pnorm( 5 , 8 , 2 )
+
+# 1b
+b  =  1  - pnorm( 9,5 , 8 , 2 )
+pnorm( 9,5 , 8 , 2 )
+
+# 1c
+c  = pnorm( 10 , 8 , 2 ) - pnorm( 7 , 8 , 2 )
+c
+
+# 1 d
+d  = qnorm( 0.75 , 8 , 2 ) # qnorm recebe uma probabilidade como argumento
+
+# 2a
+1  - (pnorm( 22,86  +  0,127 , 22,86 , 0,0762 ) - pnorm( 22,86  -  0,127 , 22,86 , 0,0762 ))
+
+# 2b
+qnorm( 0.005 , 22.86 , 0.0762 ) #limite de baixo
+
+qnorm( 0,995 , 22,86 , 0,0762 ) # limite de cima
+
+# 3a
+1  - pnorm( 1,9 , 1,8 , 0,1 )
+
+# 3b
+qnorma( 0,3 , 1,8 , 0,1 )
+
+# 4a
+pnorm( 72 , 70 , 4 ) - pnorm( 62 , 70 , 4 )
+
+# 4b #valor de c tem que ser 7.83986
+qnorm( 0,025 , 70 , 4 )
+qnorm( 0,975 , 70 , 4 )
+70  -  c  =  62
+c  <-  70  -  62,16014
+c2  <-  77,83986  -  70
+
+# 5a
+1  - pnorm( 600 , 500 , 150 ) # 25 %
+
+# 5b fica pra depois
+
+# 6a
+
+# 7c
+# media = mediana na distribuição normal
+# distância interquartil é o 3 quartil - 1 quartil
+qnorm( 0,75 , 1,8 , 0,1 ) - qnorm( 0,25 , 1,8 , 0,1 )
+
+#
+1  - pnorm( 325 , 345 , 12 )
+pnorm( 325 , 345 , 12 )
+
+( 500 * 0,05 + 1200 * 0,95 ) -  200
+
+
+
+# apara 10% dos menores e 10% dos maiores
+média( x , trim = 0,1 )
+
+
+
